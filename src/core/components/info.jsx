@@ -136,11 +136,9 @@ export default class Info extends React.Component {
           introductionDate &&
 
           <div className="introduction-date">
-            <div className="introduction-date__wrapper">
-              <strong>
-                Date introduced:
-              </strong>
-            </div>
+            <strong>
+              Date introduced: 
+            </strong>
 
             { introductionDate }
           </div>
@@ -150,11 +148,9 @@ export default class Info extends React.Component {
           expirationDate &&
 
           <div className="expiration-date">
-            <div className="expiration-date__wrapper">
-              <strong>
-                Available until:
-              </strong>
-            </div>
+            <strong>
+              Available until: 
+            </strong>
 
             { expirationDate }
           </div>
