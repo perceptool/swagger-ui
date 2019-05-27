@@ -103,7 +103,7 @@ export default class Info extends React.Component {
   }
 
   render() {
-    let { info, url, host, basePath, getComponent, externalDocs, expirationDate } = this.props
+    let { info, url, host, basePath, getComponent, externalDocs, expirationDate, introductionDate } = this.props
     let version = info.get("version")
     let description = info.get("description")
     let title = info.get("title")
@@ -130,6 +130,10 @@ export default class Info extends React.Component {
 
         <div className="description">
           <Markdown source={ description } />
+        </div>
+
+        <div className="introduction-date">
+          { introductionDate }
         </div>
 
         <div className="expiration-date">
@@ -159,5 +163,6 @@ Info.propTypes = {
   description: PropTypes.any,
   version: PropTypes.any,
   url: PropTypes.string,
+  introductionDate: PropTypes.any,
   expirationDate: PropTypes.any
 }

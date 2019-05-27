@@ -104,6 +104,11 @@ export const version = createSelector(
 	info => info && info.get("version")
 )
 
+export const introductionDate = createSelector(
+	info,
+	info => info && info.get("x-introductionDate")
+)
+
 export const expirationDate = createSelector(
 	info,
 	info => info && info.get("x-expirationDate")
