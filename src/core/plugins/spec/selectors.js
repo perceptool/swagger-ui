@@ -104,6 +104,11 @@ export const version = createSelector(
 	info => info && info.get("version")
 )
 
+export const expirationDate = createSelector(
+	info,
+	info => info && info.get("x-expirationDate")
+)
+
 export const semver = createSelector(
 	version,
 	version => /v?([0-9]*)\.([0-9]*)\.([0-9]*)/i.exec(version).slice(1)
