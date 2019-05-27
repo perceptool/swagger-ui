@@ -132,13 +132,33 @@ export default class Info extends React.Component {
           <Markdown source={ description } />
         </div>
 
-        <div className="introduction-date">
-          { introductionDate }
-        </div>
+        {
+          introductionDate &&
 
-        <div className="expiration-date">
-          { expirationDate }
-        </div>
+          <div className="introduction-date">
+            <div className="introduction-date__wrapper">
+              <strong>
+                Date introduced:
+              </strong>
+            </div>
+
+            { introductionDate }
+          </div>
+        }
+
+        {
+          expirationDate &&
+
+          <div className="expiration-date">
+            <div className="expiration-date__wrapper">
+              <strong>
+                Available until:
+              </strong>
+            </div>
+
+            { expirationDate }
+          </div>
+        }
 
         {
           termsOfService && <div className="info__tos">
