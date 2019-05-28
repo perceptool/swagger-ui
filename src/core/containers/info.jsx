@@ -17,6 +17,8 @@ export default class InfoContainer extends React.Component {
     const basePath = specSelectors.basePath()
     const host = specSelectors.host()
     const externalDocs = specSelectors.externalDocs()
+    const introductionDate = specSelectors.introductionDate()
+    const expirationDate = specSelectors.expirationDate()
 
     const Info = getComponent("info")
 
@@ -24,7 +26,7 @@ export default class InfoContainer extends React.Component {
       <div>
         {info && info.count() ? (
           <Info info={info} url={url} host={host} basePath={basePath} externalDocs={externalDocs}
-                getComponent={getComponent}/>
+                expirationDate={expirationDate} getComponent={getComponent} introductionDate={introductionDate}/>
         ) : null}
       </div>
     )

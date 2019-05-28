@@ -103,7 +103,7 @@ export default class Info extends React.Component {
   }
 
   render() {
-    let { info, url, host, basePath, getComponent, externalDocs } = this.props
+    let { info, url, host, basePath, getComponent, externalDocs, expirationDate, introductionDate } = this.props
     let version = info.get("version")
     let description = info.get("description")
     let title = info.get("title")
@@ -133,6 +133,30 @@ export default class Info extends React.Component {
         </div>
 
         {
+          introductionDate &&
+
+          <div className="introduction-date">
+            <strong>
+              Date introduced: 
+            </strong>
+
+            { introductionDate }
+          </div>
+        }
+
+        {
+          expirationDate &&
+
+          <div className="expiration-date">
+            <strong>
+              Available until: 
+            </strong>
+
+            { expirationDate }
+          </div>
+        }
+
+        {
           termsOfService && <div className="info__tos">
             <Link target="_blank" href={ sanitizeUrl(termsOfService) }>Terms of service</Link>
           </div>
@@ -154,5 +178,7 @@ Info.propTypes = {
   title: PropTypes.any,
   description: PropTypes.any,
   version: PropTypes.any,
-  url: PropTypes.string
+  url: PropTypes.string,
+  introductionDate: PropTypes.any,
+  expirationDate: PropTypes.any
 }
